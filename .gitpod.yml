@@ -1,4 +1,4 @@
 image: gitpod/workspace-dotnet
 
 tasks:
-  - command: dotnet watch src/
+  - command: cd src && ls && dotnet watch 
