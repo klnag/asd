@@ -7,4 +7,5 @@ public class User {
     public int Id { get; set; }
     [Required]
     public string? Username { get; set; }
+    public List<Project>? Projects { get; set; }
 }
