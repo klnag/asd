@@ -1,4 +1,4 @@
 image: gitpod/workspace-dotnet
 
 tasks:
-  - command: cd src && ls && dotnet watch 
+  - command: cd src && dotnet tool install -g dotnet-ef && export PATH="$PATH:/home/gitpod/.dotnet/tools" && dotnet watch 
