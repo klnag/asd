@@ -19,6 +19,14 @@ public class UserController : ControllerBase {
         return context.Users;
     }
 
+    [HttpGet("{id}")]
+    public ActionResult<User> Get(int id) {
+        User? user = context.Users?.Find(id);
+        if(user == null) {
+            return new BadRequestObjectResult("user does not exsist");
+        }
+        return user; 
+    }
     [HttpPost] 
     public string Post([FromBody] User userFormBody) {
         if(context.Users?.FirstOrDefault(user => user.Username == userFormBody.Username) == null) {
